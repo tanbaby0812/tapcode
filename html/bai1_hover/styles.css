@@ -1,0 +1,17 @@
+.top{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+.top button{
+	background-color: red;
+	color: white;
+	border: 1px solid black;
+	padding: 20px 10px;
+}
+.top button:hover {
+	background-color: lightgrey;
+	border: 5px solid lightblue;
+	color: black;
+}
