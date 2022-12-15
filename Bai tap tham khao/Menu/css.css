@@ -1,0 +1,103 @@
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background: #232323;
+	color: #cdcdcd;
+	font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+#menuToggle{
+	display: block;
+		z-index: 1;
+	-webkit-user-select: none;
+	user-select: none;
+	position:relative ;
+	top: 50px;
+	left: 50px;
+
+}
+
+#menuToggle a{
+	text-decoration: none;
+	color: red;
+	transition: color 0.3s ease;
+}
+
+#menuToggle a:hover{
+	color: lightskyblue;
+}
+
+#menuToggle input{
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	cursor: pointer;
+	opacity: 0%; 
+	z-index: 4; 
+	-webkit-touch-callout: none;
+	
+
+}
+
+#menuToggle span{
+position: inherit;
+	display: block;
+	width: 30px;
+	height: 5px;
+	margin-bottom: 3px;
+	background: white;
+	border-radius: 3px;
+	z-index: 3;
+	transform-origin: 0px 0px;
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	opacity 0.55s ease;
+}
+
+
+
+#menuToggle span:nth-last-child(2){
+	transform-origin: 50% 100%;
+}
+
+#menuToggle input:checked ~ span{
+	opacity: 50%;
+	transform: rotate(45deg) translate(-2px, -1px);
+	background: red;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3){
+	opacity: 0%;
+	transform: rotate(0deg) scale(0, 0);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2){
+	transform: rotate(-45deg) translate(1px, 2px);
+}
+
+#menu{
+	position: absolute;
+	width: 300px;
+	margin: -100px 0 0 -50px;
+	padding: 50px;
+	padding-top: 125px;
+
+	background: #ededed;
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	transform-origin: 0% 0%;
+	transform: translate(-100%, 0);
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li{
+	padding: 20px 0;
+	font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul{
+	transform: none;
+}
